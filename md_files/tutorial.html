@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="What is in my ‘user_settings.R’ file?" href="user_settings_file.html" />
-    <link rel="prev" title="Advanced features" href="usage_notes_advanced.html" />
+    <link rel="next" title="Usage notes" href="usage_notes.html" />
+    <link rel="prev" title="Install the BIDSconvertR" href="installation_bidsconvertr.html" />
     <link href="../_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -49,13 +49,6 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Install R, dependencies and RStudio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation_bidsconvertr.html">Install the BIDSconvertR</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Workflow:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="usage_notes.html">Usage notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage_notes_user_settings.html">Creation of ‘user settings’ file.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workflow.html">Start of the workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage_notes_advanced.html">Advanced features</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Tutorial:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial</a><ul>
@@ -63,6 +56,13 @@
 <li class="toctree-l2"><a class="reference internal" href="#the-bidsconvertr-workflow">The BIDSconvertR workflow</a></li>
 </ul>
 </li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Workflow:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage_notes.html">Usage notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage_notes_user_settings.html">Creation of ‘user settings’ file.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Start of the workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage_notes_advanced.html">Advanced features</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Additional information:</span></p>
 <ul>
@@ -99,33 +99,33 @@
   <section id="tutorial">
 <h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this heading"></a></h1>
 <p>This procedure should demonstrate how to use the BIDSconvertR.
-We appreciate the <a class="reference external" href="https://github.com/Donders-Institute/bidscoin">BIDScoin</a> team’s permission to use their sample data.</p>
+We appreciate the <a class="reference external" href="https://github.com/Donders-Institute/bidscoin">BIDScoin</a> team’s permission to use their sample data.
+This tutorial only covers the basic steps. You can find a detailed description including visualizations in the “workflow” section.</p>
 <section id="the-installation-procedure">
 <h2>The installation procedure<a class="headerlink" href="#the-installation-procedure" title="Permalink to this heading"></a></h2>
 <p>Installing R and RStudio and downloading sample data:</p>
 <ul class="simple">
 <li><p>To install the <a class="reference internal" href="installation_bidsconvertr.html"><span class="doc std std-doc">BIDSconvertR</span></a> on Windows or Linux follow the <a class="reference internal" href="installation.html"><span class="doc std std-doc">instructions</span></a>.</p></li>
 <li><p>Download the <a class="reference external" href="https://github.com/Donders-Institute/bidscoin">BIDScoin</a> example data : <a class="reference external" href="https://surfdrive.surf.nl/files/index.php/s/HTxdUbykBZm2cYM/download">Download here</a>.
-Please be aware that the data has been compressed twice using gunzip (suffix: ‘.gz’) and tar (suffix: ‘.tar’). You need to unpack both.</p></li>
-<li><p>Copy the <code class="docutils literal notranslate"><span class="pre">raw</span></code> subject folders into a new folder (such as <code class="docutils literal notranslate"><span class="pre">bidscoin\example</span></code>).</p></li>
+Please be aware that the data has been compressed twice using gunzip (suffix: ‘.gz’) and tar (suffix: ‘.tar’). You need to unpack both. Some programs do this in one step, others need to extract it twice. The data is fine, when you can easily click down the folder structure.</p></li>
 </ul>
 </section>
 <section id="the-bidsconvertr-workflow">
 <h2>The BIDSconvertR workflow<a class="headerlink" href="#the-bidsconvertr-workflow" title="Permalink to this heading"></a></h2>
-<p>This workflow covers each stage of the fundamental BIDSconvertR workflow:</p>
+<p>This workflow covers each stage of the BIDSconvertR workflow:</p>
 <ul class="simple">
 <li><p>Launch RStudio and use the R console from here on.</p></li>
-<li><p>Execute <code class="docutils literal notranslate"><span class="pre">library(&quot;bidsconvertr&quot;)</span></code>.</p></li>
+<li><p>Execute <code class="docutils literal notranslate"><span class="pre">library(&quot;bidsconvertr&quot;,</span> <span class="pre">quietly</span> <span class="pre">=</span> <span class="pre">TRUE)</span></code>.</p></li>
 <li><p>Use the <code class="docutils literal notranslate"><span class="pre">convert_to_BIDS()</span></code>command to launch the tool.</p></li>
 <li><p>Create your own ‘user_settings.R’ file by following the popup messages.</p>
 <ul>
-<li><p>Choose the input folder that contains the DICOM’s (e.g. ‘bidscoin_example\raw’).</p></li>
-<li><p>Select the <code class="docutils literal notranslate"><span class="pre">../subject/session/..</span></code> order of folders.</p></li>
-<li><p>Choose the output folder.</p></li>
-<li><p>Do not use the “subject-ID” or “pattern to remove” features. You have good subject-IDs!</p></li>
+<li><p>Step 1: Choose the input folder that contains the DICOM’s (here ‘bidscointutorial\raw’).</p></li>
+<li><p>Step 2: Select the <code class="docutils literal notranslate"><span class="pre">../subject/session/..</span></code> order of folders.</p></li>
+<li><p>Step 3: Create and choose the output folder. All BIDSconvertR files (including the ‘user_settings.R’ file) are saved here.</p></li>
+<li><p>Step 4: Do not use the “subject-ID” or “pattern to remove” features. You have good subject-IDs!</p></li>
 </ul>
 </li>
-<li><p>Use the sequence mapper to rename your files in accordance with BIDS, or download the <code class="docutils literal notranslate"><span class="pre">sequence_map.tsv</span></code> from <a class="reference external" href="https://raw.githubusercontent.com/wulms/bidsconvertr/master/extdata/sequence_map.tsv">this link</a>, right-click, save, and replace the file in your output folder.</p></li>
+<li><p>Use the sequence mapper to rename your files in accordance with BIDS, or download the <code class="docutils literal notranslate"><span class="pre">sequence_map.tsv</span></code> from <a class="reference external" href="https://raw.githubusercontent.com/wulms/bidsconvertr/master/extdata/sequence_map.tsv">this link</a>, right-click, save, and replace the file in your BIDS output folder.</p></li>
 </ul>
 <table class="colwidths-auto docutils align-default">
 <thead>
@@ -226,8 +226,8 @@ Please be aware that the data has been compressed twice using gunzip (suffix: �
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="usage_notes_advanced.html" class="btn btn-neutral float-left" title="Advanced features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="user_settings_file.html" class="btn btn-neutral float-right" title="What is in my ‘user_settings.R’ file?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="installation_bidsconvertr.html" class="btn btn-neutral float-left" title="Install the BIDSconvertR" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="usage_notes.html" class="btn btn-neutral float-right" title="Usage notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

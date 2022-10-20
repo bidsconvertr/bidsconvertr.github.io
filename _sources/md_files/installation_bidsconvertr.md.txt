@@ -1,7 +1,8 @@
 # Install the BIDSconvertR
 
 ```{Note} 
-Please install R in accordance with the instructions. From here, enter the following commands into RStudio's 'console' panel.
+Please install R in accordance with the instructions. From here, copy & paste the following commands into RStudio's 'console' panel.
+If you are asked to install from binary packages select "yes". If you are asked to update packages, you can skip this step.
 ```
 
 Both packages must be installed only once. 
