@@ -1,0 +1,5 @@
+# GUI: BIDS viewer
+
+A Shiny viewer is launched to examine the images visually.
+
+![BIDS viewer](../../../inst/figure/bids_viewer.PNG)

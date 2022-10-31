@@ -1,0 +1,6 @@
+# dcm2niix conversion
+
+Your data is converted into NifTI format using dcm2niix based on the inputs.
+All potentially identifiable metadata was removed with dcm2niix from the NII + JSON files. 
+
+Each JSON header is read out and combined into one file for further inspection.

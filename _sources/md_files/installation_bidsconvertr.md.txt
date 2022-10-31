@@ -2,17 +2,24 @@
 
 ```{Note} 
 Please install R in accordance with the instructions. From here, copy & paste the following commands into RStudio's 'console' panel.
-If you are asked to install from binary packages select "yes". If you are asked to update packages, you can skip this step.
+
+Known issues:
+- If you are asked to install the package from binary source files select "yes". 
+- If you are asked to update packages, you can skip this step via '3' or update the packages via '1' or '2'.
+- If there is a 'installation of package ‘devtools’ had non-zero exit status' error message, identify the package (here 'devtools') with the error message and install it manually via 'install.packages("package_name")'.
 ```
+
+
 
 Both packages must be installed only once. 
 The `devtools` package is required to install packages from Github.
 
 ``` r
+install.packages("shiny")
 install.packages("devtools")
 ```
 
-Now you are able to install the most recent development version of
+
 
 Using the command below, you can now install the most recent development version of `BIDSconvertR`.
 

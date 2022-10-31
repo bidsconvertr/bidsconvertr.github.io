@@ -1,0 +1,26 @@
+# Requirements
+
+## R-environment
+
+- R (4.2.1)
+- RStudio (recent version)
+- R packages installed:
+  - 'devtools'
+- 'shiny'
+- 'bidsconvertr'
+
+## Input data
+
+The input data must have the following structure:
+
+  -   an input folder containing all folders with DICOM data
+
+-   …/subjects/sessions/DICOM
+-   one folder per subject, for example: “00001”, “00002”
+-   these folders containing the session data, each of which contains the DICOM data
+-   …/sessions/subjects/DICOM
+-   cross-sectional (at least one folder named ‘crosssectional’ or a custom session name)
+-   one folder per session, for example: “session_1”, “session_2”
+-   these folders, which contain DICOM data in separate folders
+for each subject, e.g. “00001”, “00002”
+- if you have any additional file structures, please contact me, so that I can include them.

@@ -10,7 +10,9 @@ Otherwise the questions will be asked inside the terminal (for the advanced user
 ```
 
 
-## Please select the root directory of all DICOM images (your input folder, as described above.)
+## Input directories (DICOM)
+
+Please select the root directory of all DICOM images (your input folder, as described above.)
 
 ![Image](../../../inst/figure/bidsconvertr_select_input_folder.png)
 
@@ -22,7 +24,7 @@ If you just have one session, keep your data in a folder named, say, ‘session-
 Several folders are listed in the terminal. 
 These should include the DICOM information.
 
-## Do these folders contain the DICOM images?
+### Do these folders contain the DICOM images?
 
 ![Image](../../../inst/figure/bidsconvertr_select_input_folder_check.png)
 
@@ -32,7 +34,9 @@ These should include the DICOM information.
 | No               | You are able to select the folder again |
 
 
-## Is your DICOM data structured as ‘session/subject’ or ‘subject/session’.
+## Folder hierarchy (subject/session or session/subject)
+
+Is your DICOM data structured as ‘session/subject’ or ‘subject/session’.
 
 ![Image](../../../inst/figure/bidsconvertr_folder_order.png)
 
@@ -51,7 +55,7 @@ Please note: Any subject- or session-ID is possible! Without
 
 Choose the option that best fits your data, as displayed in the terminal.
 
-## Were subject-ID’s and session-ID’s extracted correctly?
+### Were subject-ID’s and session-ID’s extracted correctly?
 
 ![Image](../../../inst/figure/bidsconvertr_folder_order_check.png)
 
@@ -64,7 +68,12 @@ Do they appear to be valid?
 | Yes              | Next step is started.          |
 | No               | Change the folder order again. |
 
-## Selection of output directory.
+## Output directory (BIDS)
+
+The output directory will contain:
+- temporary files and metadata of the dcm2niix conversion,
+- 'user_settings.R' file and
+- BIDS output.
 
 ![Image](../../../inst/figure/bidsconvertr_select_output_folder.png)
 

@@ -1,11 +1,11 @@
-# Tutorial
+# General
 
 This procedure should demonstrate how to use the BIDSconvertR. 
 We appreciate the [BIDScoin](https://github.com/Donders-Institute/bidscoin) team's permission to use their sample data.
 This tutorial only covers the basic steps. You can find a detailed description including visualizations in the "workflow" section.
 
 
-## The installation procedure
+# The installation procedure
 
 Installing R and RStudio and downloading sample data:
 
@@ -13,18 +13,24 @@ Installing R and RStudio and downloading sample data:
 - Download the [BIDScoin](https://github.com/Donders-Institute/bidscoin) example data : [Download here](https://surfdrive.surf.nl/files/index.php/s/HTxdUbykBZm2cYM/download). 
   Please be aware that the data has been compressed twice using gunzip (suffix: '.gz') and tar (suffix: '.tar'). You need to unpack both. Some programs do this in one step, others need to extract it twice. The data is fine, when you can easily click down the folder structure.
 
-## The BIDSconvertR workflow
+# The BIDSconvertR workflow
 
 This workflow covers each stage of the BIDSconvertR workflow:
 
 - Launch RStudio and use the R console from here on.
 - Execute `library("bidsconvertr", quietly = TRUE)`.
 - Use the `convert_to_BIDS()`command to launch the tool.
+
+## Creation of 'user\_settings.R' file.
+
 - Create your own 'user\_settings.R' file by following the popup messages.
   - Step 1: Choose the input folder that contains the DICOM's (here 'bidscointutorial\raw').
   - Step 2: Select the `../subject/session/..` order of folders.
   - Step 3: Create and choose the output folder. All BIDSconvertR files (including the 'user_settings.R' file) are saved here.
   - Step 4: Do not use the "subject-ID" or "pattern to remove" features. You have good subject-IDs!
+  
+## GUI: sequence mapper
+
 - Use the sequence mapper to rename your files in accordance with BIDS, or download the `sequence_map.tsv` from [this link](https://raw.githubusercontent.com/wulms/bidsconvertr/master/extdata/sequence_map.tsv), right-click, save, and replace the file in your BIDS output folder.
 
 

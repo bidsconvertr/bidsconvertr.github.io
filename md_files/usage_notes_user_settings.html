@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Start of the workflow" href="workflow.html" />
-    <link rel="prev" title="Usage notes" href="usage_notes.html" />
+    <link rel="next" title="Advanced features" href="usage_notes_advanced.html" />
+    <link rel="prev" title="Starting the workflow" href="usage_notes.html" />
     <link href="../_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -40,9 +40,11 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Introduction:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Overview:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="bidsconvertr.html">BIDSconvertR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_viz.html">Workflow visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citation.html">Citation</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Installation:</span></p>
 <ul>
@@ -51,21 +53,39 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tutorial:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html#the-installation-procedure">The installation procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html#the-bidsconvertr-workflow">The BIDSconvertR workflow</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Workflow:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Workflow (Setup 'user_settings.R'):</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="usage_notes.html">Usage notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_requirement.html">Requirement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage_notes.html">Starting the workflow</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Creation of ‘user settings’ file.</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#please-select-the-root-directory-of-all-dicom-images-your-input-folder-as-described-above">Please select the root directory of all DICOM images (your input folder, as described above.)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#do-these-folders-contain-the-dicom-images">Do these folders contain the DICOM images?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#is-your-dicom-data-structured-as-session-subject-or-subject-session">Is your DICOM data structured as ‘session/subject’ or ‘subject/session’.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#were-subject-ids-and-session-ids-extracted-correctly">Were subject-ID’s and session-ID’s extracted correctly?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#selection-of-output-directory">Selection of output directory.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#input-directories-dicom">Input directories (DICOM)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#do-these-folders-contain-the-dicom-images">Do these folders contain the DICOM images?</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="workflow.html">Start of the workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#folder-hierarchy-subject-session-or-session-subject">Folder hierarchy (subject/session or session/subject)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#were-subject-ids-and-session-ids-extracted-correctly">Were subject-ID’s and session-ID’s extracted correctly?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#output-directory-bids">Output directory (BIDS)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Workflow (optional file cleaning):</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="usage_notes_advanced.html">Advanced features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cleaning_subjects.html">subject-ID cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cleaning_sessions.html">session-ID cleaning</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Workflow (rest):</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="workflow_dcm2niix.html">dcm2niix conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_sequencemapper.html">The sequence mapper GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_validation.html">BIDS validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_qc.html">BIDS viewer</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Additional information:</span></p>
 <ul>
@@ -109,17 +129,17 @@ The questions from each popup window are described below in their order.</p>
 <p>You need RStudio for popup support (user-friendly solution).
 Otherwise the questions will be asked inside the terminal (for the advanced user).</p>
 </div>
-<section id="please-select-the-root-directory-of-all-dicom-images-your-input-folder-as-described-above">
-<h2>Please select the root directory of all DICOM images (your input folder, as described above.)<a class="headerlink" href="#please-select-the-root-directory-of-all-dicom-images-your-input-folder-as-described-above" title="Permalink to this heading"></a></h2>
+<section id="input-directories-dicom">
+<h2>Input directories (DICOM)<a class="headerlink" href="#input-directories-dicom" title="Permalink to this heading"></a></h2>
+<p>Please select the root directory of all DICOM images (your input folder, as described above.)</p>
 <p><img alt="Image" src="../_images/bidsconvertr_select_input_folder.png" /></p>
 <p>The root folder, which contains all session/subject or
 subject/session folders, is the one you choose.
 If you just have one session, keep your data in a folder named, say, ‘session-0’.</p>
 <p>Several folders are listed in the terminal.
 These should include the DICOM information.</p>
-</section>
 <section id="do-these-folders-contain-the-dicom-images">
-<h2>Do these folders contain the DICOM images?<a class="headerlink" href="#do-these-folders-contain-the-dicom-images" title="Permalink to this heading"></a></h2>
+<h3>Do these folders contain the DICOM images?<a class="headerlink" href="#do-these-folders-contain-the-dicom-images" title="Permalink to this heading"></a></h3>
 <p><img alt="Image" src="../_images/bidsconvertr_select_input_folder_check.png" /></p>
 <table class="colwidths-auto docutils align-default">
 <thead>
@@ -137,8 +157,10 @@ These should include the DICOM information.</p>
 </tbody>
 </table>
 </section>
-<section id="is-your-dicom-data-structured-as-session-subject-or-subject-session">
-<h2>Is your DICOM data structured as ‘session/subject’ or ‘subject/session’.<a class="headerlink" href="#is-your-dicom-data-structured-as-session-subject-or-subject-session" title="Permalink to this heading"></a></h2>
+</section>
+<section id="folder-hierarchy-subject-session-or-session-subject">
+<h2>Folder hierarchy (subject/session or session/subject)<a class="headerlink" href="#folder-hierarchy-subject-session-or-session-subject" title="Permalink to this heading"></a></h2>
+<p>Is your DICOM data structured as ‘session/subject’ or ‘subject/session’.</p>
 <p><img alt="Image" src="../_images/bidsconvertr_folder_order.png" /></p>
 <p>Based on this selection, the tool extracts the subject- and session-ID’s.
 The folders are displayed on the console.</p>
@@ -160,9 +182,8 @@ The folders are displayed on the console.</p>
 </tbody>
 </table>
 <p>Choose the option that best fits your data, as displayed in the terminal.</p>
-</section>
 <section id="were-subject-ids-and-session-ids-extracted-correctly">
-<h2>Were subject-ID’s and session-ID’s extracted correctly?<a class="headerlink" href="#were-subject-ids-and-session-ids-extracted-correctly" title="Permalink to this heading"></a></h2>
+<h3>Were subject-ID’s and session-ID’s extracted correctly?<a class="headerlink" href="#were-subject-ids-and-session-ids-extracted-correctly" title="Permalink to this heading"></a></h3>
 <p><img alt="Image" src="../_images/bidsconvertr_folder_order_check.png" /></p>
 <p>A table with the columns “subject” and “session” is displayed on the terminal.
 Do they appear to be valid?</p>
@@ -182,8 +203,15 @@ Do they appear to be valid?</p>
 </tbody>
 </table>
 </section>
-<section id="selection-of-output-directory">
-<h2>Selection of output directory.<a class="headerlink" href="#selection-of-output-directory" title="Permalink to this heading"></a></h2>
+</section>
+<section id="output-directory-bids">
+<h2>Output directory (BIDS)<a class="headerlink" href="#output-directory-bids" title="Permalink to this heading"></a></h2>
+<p>The output directory will contain:</p>
+<ul class="simple">
+<li><p>temporary files and metadata of the dcm2niix conversion,</p></li>
+<li><p>‘user_settings.R’ file and</p></li>
+<li><p>BIDS output.</p></li>
+</ul>
 <p><img alt="Image" src="../_images/bidsconvertr_select_output_folder.png" /></p>
 <p>You can choose any folder on your hard drive.
 As a result, raw data can be stored somewhere other than where processed data is.</p>
@@ -194,8 +222,8 @@ As a result, raw data can be stored somewhere other than where processed data is
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="usage_notes.html" class="btn btn-neutral float-left" title="Usage notes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="workflow.html" class="btn btn-neutral float-right" title="Start of the workflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="usage_notes.html" class="btn btn-neutral float-left" title="Starting the workflow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="usage_notes_advanced.html" class="btn btn-neutral float-right" title="Advanced features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

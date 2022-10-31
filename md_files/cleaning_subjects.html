@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BIDSconvertR &mdash; BIDSconvertR 0.0.1 documentation</title>
+  <title>subject-ID cleaning &mdash; BIDSconvertR 0.0.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Workflow visualization" href="workflow_viz.html" />
-    <link rel="prev" title="The BIDSconvertR" href="../index.html" />
+    <link rel="next" title="session-ID cleaning" href="cleaning_sessions.html" />
+    <link rel="prev" title="Advanced features" href="usage_notes_advanced.html" />
     <link href="../_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -41,13 +41,8 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Overview:</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">BIDSconvertR</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#aim">Aim</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#features">Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#milestones-to-do-s">Milestones / To-Do’s</a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bidsconvertr.html">BIDSconvertR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="workflow_viz.html">Workflow visualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="citation.html">Citation</a></li>
 </ul>
@@ -69,9 +64,13 @@
 <li class="toctree-l1"><a class="reference internal" href="usage_notes_user_settings.html">Creation of ‘user settings’ file.</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Workflow (optional file cleaning):</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="usage_notes_advanced.html">Advanced features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cleaning_subjects.html">subject-ID cleaning</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">subject-ID cleaning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#regular-expression-subject-id">Regular expression: subject-ID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#regular-expression-pattern-to-remove">Regular expression: pattern to remove</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="cleaning_sessions.html">session-ID cleaning</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Workflow (rest):</span></p>
@@ -103,9 +102,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>BIDSconvertR</li>
+      <li>subject-ID cleaning</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/md_files/bidsconvertr.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/md_files/cleaning_subjects.md.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -113,83 +112,115 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <!-- README.md is generated from README.Rmd. Please edit that file -->
-<section id="bidsconvertr">
-<h1>BIDSconvertR<a class="headerlink" href="#bidsconvertr" title="Permalink to this heading"></a></h1>
-<!-- <figure>-->
-<!-- <img align="right" height="150" src="../../inst/figure/BIDSconvertR.png" alt="BIDSconvertR logo"/>-->
-<!-- <figcaption>The BIDSconvertR logo, created with </figcaption>-->
-<!-- </figure>-->
-<!-- badges: start -->
-<p><a class="reference external" href="https://zenodo.org/badge/latestdoi/195199025"><img alt="DOI" src="https://zenodo.org/badge/195199025.svg" /></a>
-<a class="reference external" href="https://bids-specification.readthedocs.io/en/v1.7.0/"><img alt="BIDS" src="https://img.shields.io/badge/BIDS-v1.7.0-blue" /></a>
-<a class="reference external" href="https://github.com/wulms/bidsconvertr"><img alt="Github" src="https://img.shields.io/github/v/release/wulms/bidsconvertr.svg" /></a>
-<a class="reference external" href="https://www.gnu.org/licenses/gpl-3.0"><img alt="License: GPL v3" src="https://img.shields.io/badge/License-GPLv3-blue.svg" /></a></p>
-<a class="reference internal image-reference" href="../_images/BIDSconvertR.png"><img alt="BIDSconvertR logo" class="align-right" src="../_images/BIDSconvertR.png" style="height: 150px;" /></a>
-<p>The hexagonal sticker was made using the <a class="reference external" href="https://github.com/mitchelloharawild/icons">iconspackage</a> and based on the MRI svg graphics provided by
-Flaticon and mavadee <a class="reference external" href="https://www.flaticon.com/free-icons/mri">FlaticonLink</a>.</p>
-<!-- badges: end -->
-<section id="aim">
-<h2>Aim<a class="headerlink" href="#aim" title="Permalink to this heading"></a></h2>
-<p><a class="reference external" href="https://github.com/wulms/bidsconvertr">BIDSconvertR</a> aims to provide a workflow that can:</p>
-<ul class="simple">
-<li><p>do the task inside of the R environment</p></li>
-<li><p>convert DICOM data to NIfTI (with the awesome <a class="reference external" href="https://github.com/rordenlab/dcm2niix">dcm2niix</a></p></li>
-<li><p>structure this data according to the <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/">BIDS specification</a></p></li>
-</ul>
+  <section id="subject-id-cleaning">
+<h1>subject-ID cleaning<a class="headerlink" href="#subject-id-cleaning" title="Permalink to this heading"></a></h1>
+<p>The input folder name serves as the subject-ID.
+In the absence of a regular expression, the subject-ID is unaltered.</p>
+<section id="regular-expression-subject-id">
+<h2>Regular expression: subject-ID<a class="headerlink" href="#regular-expression-subject-id" title="Permalink to this heading"></a></h2>
+<p><img alt="Image" src="../_images/bidsconvertr_regex_subjid.png" /></p>
+<p>The subject-ID is extracted from the input string using this regular expression.
+If all of your files had a well established naming convention, you could use this.</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>subject-ID</p></th>
+<th class="head"><p>regular expression</p></th>
+<th class="head"><p>described in words</p></th>
+<th class="head"><p>output subject-ID</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>01234</p></td>
+<td><p>[:digit:]{5}</p></td>
+<td><p>5 digits</p></td>
+<td><p>sub-01234</p></td>
+</tr>
+<tr class="row-odd"><td><p>Control2132</p></td>
+<td><p>(Control|Patient)[:digit:]{4}</p></td>
+<td><p>“Control” OR “Patient” followed by 4 digits</p></td>
+<td><p>sub-Control2132</p></td>
+</tr>
+<tr class="row-even"><td><p>Patient0123_test</p></td>
+<td><p>(Control|Patient)[:digit:]{4}</p></td>
+<td><p></p></td>
+<td><p>sub-Patient0213</p></td>
+</tr>
+<tr class="row-odd"><td><p>abcd0123</p></td>
+<td><p>[:alpha:]{4}[:digit:]{4}</p></td>
+<td><p>4 letters and 4 digits</p></td>
+<td><p>sub-abcd0123</p></td>
+</tr>
+<tr class="row-even"><td><p>pilot_sdfjd3222</p></td>
+<td><p>[:alpha:]{4}[:digit:]{4}</p></td>
+<td><p></p></td>
+<td><p>sub-sdfjd3222</p></td>
+</tr>
+<tr class="row-odd"><td><p>adc932d</p></td>
+<td><p>[:alnum:]{5,7}</p></td>
+<td><p>between 5 to 7 alphanumeric (letters, digits)</p></td>
+<td><p>sub-adc932d</p></td>
+</tr>
+<tr class="row-even"><td><p>23d49</p></td>
+<td><p>[:alnum:]{5,7}</p></td>
+<td><p></p></td>
+<td><p>sub-23d49</p></td>
+</tr>
+</tbody>
+</table>
+<p>Examples of subject-ID regular expressions</p>
 </section>
-<section id="features">
-<h2>Features<a class="headerlink" href="#features" title="Permalink to this heading"></a></h2>
-<ul class="simple">
-<li><p>continuous application</p>
-<ul>
-<li><p>lazy processing of already existing files</p></li>
-<li><p>easy application during data collection in ongoing studies</p></li>
-</ul>
-</li>
-<li><p>user-friendliness (minimial terminal interaction required)</p>
-<ul>
-<li><p>user dialog with message boxes guiding the users through the workflow</p></li>
-<li><p>Shiny App (GUI) for sequence editing and data inspection</p></li>
-</ul>
-</li>
-<li><p>file cleaning</p>
-<ul>
-<li><p>Renaming of subject-IDs or session-IDs with regular expressions.</p></li>
-<li><p>Renaming of session-IDs</p></li>
-</ul>
-</li>
-<li><p>BIDS validation</p>
-<ul>
-<li><p>verification (color-coded) of sequence-IDs (comparing the entered sequence-IDs to regular expressions according to BIDS)</p></li>
-<li><p>implemented validation with <a class="reference external" href="https://bids-standard.github.io/bids-validator/">BIDS-Validator</a> (Website/Docker)</p></li>
-</ul>
-</li>
-<li><p>quality control</p>
-<ul>
-<li><p>user-friendly (<a class="reference external" href="https://github.com/muschellij2/papayaWidget">papayaWidget</a> image viewer) for BIDS datasets</p></li>
-</ul>
-</li>
-<li><p>pseudonymized BIDS output (only metadata)</p>
-<ul>
-<li><p>all potentially identifiable metadata was removed from images and JSONs</p></li>
-</ul>
-</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Only the metadata contained within the BIDS folder is free of potentially identifiable information. Follow the legal terms when sharing your dataset and consider additional defacing, pseudonymization, or both.</p>
-</div>
-</section>
-<section id="milestones-to-do-s">
-<h2>Milestones / To-Do’s<a class="headerlink" href="#milestones-to-do-s" title="Permalink to this heading"></a></h2>
-<ul class="simple">
-<li><p>publish the BIDSconvertR</p></li>
-<li><p>testing the tool on MAC systems</p></li>
-<li><p>create Docker container</p></li>
-<li><p>move image viewer into separate package</p></li>
-<li><p>adapt code to CRAN requirements</p></li>
-</ul>
+<section id="regular-expression-pattern-to-remove">
+<h2>Regular expression: pattern to remove<a class="headerlink" href="#regular-expression-pattern-to-remove" title="Permalink to this heading"></a></h2>
+<p><img alt="Image" src="../_images/bidsconvertr_regex_remove.png" /></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">pattern_to_remove</span></code> regular expression simply removes the regular expression(s) from the subject-ID.</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>subject-ID</p></th>
+<th class="head"><p>regular expression</p></th>
+<th class="head"><p>described in words</p></th>
+<th class="head"><p>output subject-ID</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>02313_bidirect</p></td>
+<td><p>_(bidirect|BiDirect|Bidiect)</p></td>
+<td><p>“_” followed by “bidirect”, “BiDirect” or “BiDiect”</p></td>
+<td><p>sub-02313</p></td>
+</tr>
+<tr class="row-odd"><td><p>03211_BiDirect</p></td>
+<td><p>_(bidirect|BiDirect|Bidiect)</p></td>
+<td><p></p></td>
+<td><p>sub-03211</p></td>
+</tr>
+<tr class="row-even"><td><p>02111_Bidiect</p></td>
+<td><p>_(bidirect|BiDirect|Bidiect)</p></td>
+<td><p></p></td>
+<td><p>sub-02111</p></td>
+</tr>
+<tr class="row-odd"><td><p>test0111</p></td>
+<td><p>test|study_a_</p></td>
+<td><p>“test” or “study_a_”</p></td>
+<td><p>sub-0111</p></td>
+</tr>
+<tr class="row-even"><td><p>study_a_1111</p></td>
+<td><p>test|study_a_</p></td>
+<td><p></p></td>
+<td><p>sub-1111</p></td>
+</tr>
+<tr class="row-odd"><td><p>pre9222post</p></td>
+<td><p>pre|post|suffix|prefix</p></td>
+<td><p>as in the cell above</p></td>
+<td><p>sub-9222</p></td>
+</tr>
+<tr class="row-even"><td><p>suffix223prefix</p></td>
+<td><p>pre|post|suffix|prefix</p></td>
+<td><p></p></td>
+<td><p>sub-223</p></td>
+</tr>
+</tbody>
+</table>
+<p>Examples of ‘patterns to remove’ regular expressions</p>
+<p><img alt="Image" src="../_images/bidsconvertr_regex_valid.png" /></p>
 </section>
 </section>
 
@@ -197,8 +228,8 @@ Flaticon and mavadee <a class="reference external" href="https://www.flaticon.co
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../index.html" class="btn btn-neutral float-left" title="The BIDSconvertR" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="workflow_viz.html" class="btn btn-neutral float-right" title="Workflow visualization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="usage_notes_advanced.html" class="btn btn-neutral float-left" title="Advanced features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cleaning_sessions.html" class="btn btn-neutral float-right" title="session-ID cleaning" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

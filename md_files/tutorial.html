@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tutorial &mdash; BIDSconvertR 0.0.1 documentation</title>
+  <title>General &mdash; BIDSconvertR 0.0.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,7 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Usage notes" href="usage_notes.html" />
+    <link rel="next" title="Requirement" href="workflow_requirement.html" />
     <link rel="prev" title="Install the BIDSconvertR" href="installation_bidsconvertr.html" />
     <link href="../_static/style.css" rel="stylesheet" type="text/css">
 
@@ -40,9 +40,11 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Introduction:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Overview:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="bidsconvertr.html">BIDSconvertR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_viz.html">Workflow visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citation.html">Citation</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Installation:</span></p>
 <ul>
@@ -51,18 +53,32 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tutorial:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#the-installation-procedure">The installation procedure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#the-bidsconvertr-workflow">The BIDSconvertR workflow</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#the-installation-procedure">The installation procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#the-bidsconvertr-workflow">The BIDSconvertR workflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creation-of-user-settings-r-file">Creation of ‘user_settings.R’ file.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gui-sequence-mapper">GUI: sequence mapper</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Workflow:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Workflow (Setup 'user_settings.R'):</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="usage_notes.html">Usage notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_requirement.html">Requirement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage_notes.html">Starting the workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage_notes_user_settings.html">Creation of ‘user settings’ file.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workflow.html">Start of the workflow</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Workflow (optional file cleaning):</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="usage_notes_advanced.html">Advanced features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cleaning_subjects.html">subject-ID cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cleaning_sessions.html">session-ID cleaning</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Workflow (rest):</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="workflow_dcm2niix.html">dcm2niix conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_sequencemapper.html">The sequence mapper GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_validation.html">BIDS validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_qc.html">BIDS viewer</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Additional information:</span></p>
 <ul>
@@ -86,7 +102,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Tutorial</li>
+      <li>General</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/md_files/tutorial.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -96,13 +112,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="tutorial">
-<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this heading"></a></h1>
+  <section id="general">
+<h1>General<a class="headerlink" href="#general" title="Permalink to this heading"></a></h1>
 <p>This procedure should demonstrate how to use the BIDSconvertR.
 We appreciate the <a class="reference external" href="https://github.com/Donders-Institute/bidscoin">BIDScoin</a> team’s permission to use their sample data.
 This tutorial only covers the basic steps. You can find a detailed description including visualizations in the “workflow” section.</p>
+</section>
 <section id="the-installation-procedure">
-<h2>The installation procedure<a class="headerlink" href="#the-installation-procedure" title="Permalink to this heading"></a></h2>
+<h1>The installation procedure<a class="headerlink" href="#the-installation-procedure" title="Permalink to this heading"></a></h1>
 <p>Installing R and RStudio and downloading sample data:</p>
 <ul class="simple">
 <li><p>To install the <a class="reference internal" href="installation_bidsconvertr.html"><span class="doc std std-doc">BIDSconvertR</span></a> on Windows or Linux follow the <a class="reference internal" href="installation.html"><span class="doc std std-doc">instructions</span></a>.</p></li>
@@ -111,12 +128,16 @@ Please be aware that the data has been compressed twice using gunzip (suffix: �
 </ul>
 </section>
 <section id="the-bidsconvertr-workflow">
-<h2>The BIDSconvertR workflow<a class="headerlink" href="#the-bidsconvertr-workflow" title="Permalink to this heading"></a></h2>
+<h1>The BIDSconvertR workflow<a class="headerlink" href="#the-bidsconvertr-workflow" title="Permalink to this heading"></a></h1>
 <p>This workflow covers each stage of the BIDSconvertR workflow:</p>
 <ul class="simple">
 <li><p>Launch RStudio and use the R console from here on.</p></li>
 <li><p>Execute <code class="docutils literal notranslate"><span class="pre">library(&quot;bidsconvertr&quot;,</span> <span class="pre">quietly</span> <span class="pre">=</span> <span class="pre">TRUE)</span></code>.</p></li>
 <li><p>Use the <code class="docutils literal notranslate"><span class="pre">convert_to_BIDS()</span></code>command to launch the tool.</p></li>
+</ul>
+<section id="creation-of-user-settings-r-file">
+<h2>Creation of ‘user_settings.R’ file.<a class="headerlink" href="#creation-of-user-settings-r-file" title="Permalink to this heading"></a></h2>
+<ul class="simple">
 <li><p>Create your own ‘user_settings.R’ file by following the popup messages.</p>
 <ul>
 <li><p>Step 1: Choose the input folder that contains the DICOM’s (here ‘bidscointutorial\raw’).</p></li>
@@ -125,6 +146,11 @@ Please be aware that the data has been compressed twice using gunzip (suffix: �
 <li><p>Step 4: Do not use the “subject-ID” or “pattern to remove” features. You have good subject-IDs!</p></li>
 </ul>
 </li>
+</ul>
+</section>
+<section id="gui-sequence-mapper">
+<h2>GUI: sequence mapper<a class="headerlink" href="#gui-sequence-mapper" title="Permalink to this heading"></a></h2>
+<ul class="simple">
 <li><p>Use the sequence mapper to rename your files in accordance with BIDS, or download the <code class="docutils literal notranslate"><span class="pre">sequence_map.tsv</span></code> from <a class="reference external" href="https://raw.githubusercontent.com/wulms/bidsconvertr/master/extdata/sequence_map.tsv">this link</a>, right-click, save, and replace the file in your BIDS output folder.</p></li>
 </ul>
 <table class="colwidths-auto docutils align-default">
@@ -227,7 +253,7 @@ Please be aware that the data has been compressed twice using gunzip (suffix: �
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="installation_bidsconvertr.html" class="btn btn-neutral float-left" title="Install the BIDSconvertR" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="usage_notes.html" class="btn btn-neutral float-right" title="Usage notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="workflow_requirement.html" class="btn btn-neutral float-right" title="Requirement" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -35,4 +35,11 @@ Install
 Then “Right-Click -\> Open With -\>Software Install” should help in
 the installation.
 
+## Mac
+
+We need some collaborators, who try out the BIDSconvertR on a Mac system. Contact me, if you are interested.
+
+
+
+
 

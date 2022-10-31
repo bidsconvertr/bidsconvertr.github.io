@@ -58,17 +58,18 @@ What the user needs to know to apply the BIDSconvertR
 * What is a DICOM-containing folder?
 * What is the difference between a subject- and sequence-ID?
 * What exactly is BIDS?
-* Is my sequence name a valid BIDS sequence name?
+* How to create valid BIDS sequence names?
 
 So, if you can manually rename and restructure the folders according to BIDS, you can run the tool to scale things up.
 
 
 .. toctree::
    :maxdepth: 1
-   :caption: Introduction:
+   :caption: Overview:
 
    md_files/bidsconvertr.md
-
+   md_files/workflow_viz.md
+   md_files/citation.md
 
 .. toctree::
    :maxdepth: 1
@@ -86,14 +87,28 @@ So, if you can manually rename and restructure the folders according to BIDS, yo
 
 .. toctree::
    :maxdepth: 1
-   :caption: Workflow:
+   :caption: Workflow (Setup 'user_settings.R'):
 
+   md_files/workflow_requirement.md
    md_files/usage_notes.md
    md_files/usage_notes_user_settings.md
-   md_files/workflow.md
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Workflow (optional file cleaning):
+
    md_files/usage_notes_advanced.md
+   md_files/cleaning_subjects.md
+   md_files/cleaning_sessions.md
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Workflow (rest):
 
+   md_files/workflow_dcm2niix.md
+   md_files/workflow_sequencemapper.md
+   md_files/workflow_validation.md
+   md_files/workflow_qc.md
 
 
 

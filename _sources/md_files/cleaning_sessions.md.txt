@@ -1,0 +1,36 @@
+# session-ID cleaning
+
+![Image](../../../inst/figure/bidsconvertr_renaming_sessions.png)
+
+
+You can choose to keep them or rename them.
+
+| Option to select              | What happens?                                                           |
+|-------------------------------|-------------------------------------------------------------------------|
+| Yes, I need to change them    | Each session is opened separately and you can enter the new session-ID. |
+| No, my session-ID’s are fine. | Nothing is edited, you keep your session-IDs                            |
+
+Yes:
+
+“Yes, I need to change them” can result in output like this. Your session-IDs can now be edited. The user
+could also choose to use “followup” or something else.
+
+![Image](../../../inst/figure/bidsconvertr_renaming_sessions2.png)
+
+
+| session-ID (old) | session-ID (user input) | session-BIDS |
+|------------------|-------------------------|--------------|
+| baseline         | 1                       | ses-1        |
+| follow_up        | 2                       | ses-2        |
+
+
+
+No:
+
+“No, my session-ID’s are fine”
+
+
+| session-ID (old) | session-BIDS  |
+|------------------|---------------|
+| baseline         | ses-baseline  |
+| follow_up        | ses-follow_up |
