@@ -19,7 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Requirement" href="workflow_requirement.html" />
+    <link rel="next" title="Requirements" href="workflow_requirement.html" />
     <link rel="prev" title="Install the BIDSconvertR" href="installation_bidsconvertr.html" />
     <link href="../_static/style.css" rel="stylesheet" type="text/css">
 
@@ -63,7 +63,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Workflow (Setup 'user_settings.R'):</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="workflow_requirement.html">Requirement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_requirement.html">Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage_notes.html">Starting the workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage_notes_user_settings.html">Creation of ‘user settings’ file.</a></li>
 </ul>
@@ -76,9 +76,9 @@
 <p class="caption" role="heading"><span class="caption-text">Workflow (rest):</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="workflow_dcm2niix.html">dcm2niix conversion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workflow_sequencemapper.html">The sequence mapper GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_sequencemapper.html">GUI: The sequence mapper</a></li>
 <li class="toctree-l1"><a class="reference internal" href="workflow_validation.html">BIDS validation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workflow_qc.html">BIDS viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_qc.html">GUI: BIDS viewer</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Additional information:</span></p>
 <ul>
@@ -114,17 +114,14 @@
              
   <section id="general">
 <h1>General<a class="headerlink" href="#general" title="Permalink to this heading"></a></h1>
-<p>This procedure should demonstrate how to use the BIDSconvertR.
-We appreciate the <a class="reference external" href="https://github.com/Donders-Institute/bidscoin">BIDScoin</a> team’s permission to use their sample data.
-This tutorial only covers the basic steps. You can find a detailed description including visualizations in the “workflow” section.</p>
+<p>This procedure should demonstrate how to use the BIDSconvertR. We appreciate the <a class="reference external" href="https://github.com/Donders-Institute/bidscoin">BIDScoin</a> team’s permission to use their sample data. This tutorial only covers the basic steps. You can find a detailed description including visualizations in the “workflow” section.</p>
 </section>
 <section id="the-installation-procedure">
 <h1>The installation procedure<a class="headerlink" href="#the-installation-procedure" title="Permalink to this heading"></a></h1>
 <p>Installing R and RStudio and downloading sample data:</p>
 <ul class="simple">
 <li><p>To install the <a class="reference internal" href="installation_bidsconvertr.html"><span class="doc std std-doc">BIDSconvertR</span></a> on Windows or Linux follow the <a class="reference internal" href="installation.html"><span class="doc std std-doc">instructions</span></a>.</p></li>
-<li><p>Download the <a class="reference external" href="https://github.com/Donders-Institute/bidscoin">BIDScoin</a> example data : <a class="reference external" href="https://surfdrive.surf.nl/files/index.php/s/HTxdUbykBZm2cYM/download">Download here</a>.
-Please be aware that the data has been compressed twice using gunzip (suffix: ‘.gz’) and tar (suffix: ‘.tar’). You need to unpack both. Some programs do this in one step, others need to extract it twice. The data is fine, when you can easily click down the folder structure.</p></li>
+<li><p>Download the <a class="reference external" href="https://github.com/Donders-Institute/bidscoin">BIDScoin</a> example data : <a class="reference external" href="https://surfdrive.surf.nl/files/index.php/s/HTxdUbykBZm2cYM/download">Download here</a>. Please be aware that the data has been compressed twice using gunzip (suffix: ‘.gz’) and tar (suffix: ‘.tar’). You need to unpack both. Some programs do this in one step, others need to extract it twice. The data is fine, when you can easily click down the folder structure.</p></li>
 </ul>
 </section>
 <section id="the-bidsconvertr-workflow">
@@ -156,90 +153,90 @@ Please be aware that the data has been compressed twice using gunzip (suffix: �
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>sequence</p></th>
-<th class="head"><p>BIDS_sequence</p></th>
 <th class="head"><p>BIDS_type</p></th>
+<th class="head"><p>BIDS_sequence</p></th>
 <th class="head"><p>relevant</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>t1_mprage_sag_ipat2_1p0iso</p></td>
-<td><p>T1w</p></td>
 <td><p>anat</p></td>
+<td><p>T1w</p></td>
 <td><p>1</p></td>
 </tr>
 <tr class="row-odd"><td><p>AAHead_Scout_32ch-head</p></td>
-<td><p>smart</p></td>
 <td><p>anat</p></td>
+<td><p>smart</p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="row-even"><td><p>cmrr_2p4iso_mb8_TR0700</p></td>
-<td><p>task-reward_acq-mp8_echo-1_bold</p></td>
 <td><p>func</p></td>
+<td><p>task-reward_acq-mp8_echo-1_bold</p></td>
 <td><p>1</p></td>
 </tr>
 <tr class="row-odd"><td><p>cmrr_2p4iso_mb8_TR0700_SBRef</p></td>
-<td><p>task-reward_acq-mp8_echo-1_sbref</p></td>
 <td><p>func</p></td>
+<td><p>task-reward_acq-mp8_echo-1_sbref</p></td>
 <td><p>1</p></td>
 </tr>
 <tr class="row-even"><td><p>cmrr_2p5iso_mb3me3_TR1500_e1</p></td>
-<td><p>task-stop_acq-mp3m3_run-1_bold</p></td>
 <td><p>func</p></td>
+<td><p>task-stop_acq-mp3m3_run-1_bold</p></td>
 <td><p>1</p></td>
 </tr>
 <tr class="row-odd"><td><p>cmrr_2p5iso_mb3me3_TR1500_e2</p></td>
-<td><p>task-stop_acq-mp3m3_run-2_bold</p></td>
 <td><p>func</p></td>
+<td><p>task-stop_acq-mp3m3_run-2_bold</p></td>
 <td><p>1</p></td>
 </tr>
 <tr class="row-even"><td><p>cmrr_2p5iso_mb3me3_TR1500_e3</p></td>
-<td><p>task-stop_acq-mp3m3_run-3_bold</p></td>
 <td><p>func</p></td>
+<td><p>task-stop_acq-mp3m3_run-3_bold</p></td>
 <td><p>1</p></td>
 </tr>
 <tr class="row-odd"><td><p>cmrr_2p5iso_mb3me3_TR1500_SBRef_e1</p></td>
-<td><p>task-stop_acq-mp3m3_run-1_sbref</p></td>
 <td><p>func</p></td>
+<td><p>task-stop_acq-mp3m3_run-1_sbref</p></td>
 <td><p>1</p></td>
 </tr>
 <tr class="row-even"><td><p>cmrr_2p5iso_mb3me3_TR1500_SBRef_e2</p></td>
-<td><p>task-stop_acq-mp3m3_run-2_sbref</p></td>
 <td><p>func</p></td>
+<td><p>task-stop_acq-mp3m3_run-2_sbref</p></td>
 <td><p>1</p></td>
 </tr>
 <tr class="row-odd"><td><p>cmrr_2p5iso_mb3me3_TR1500_SBRef_e3</p></td>
-<td><p>task-stop_acq-mp3m3_run-3_sbref</p></td>
 <td><p>func</p></td>
+<td><p>task-stop_acq-mp3m3_run-3_sbref</p></td>
 <td><p>1</p></td>
 </tr>
 <tr class="row-even"><td><p>field_map_2p4iso_e1</p></td>
-<td><p>acq-2p4_magnitude1</p></td>
 <td><p>fmap</p></td>
+<td><p>acq-2p4_magnitude1</p></td>
 <td><p>1</p></td>
 </tr>
 <tr class="row-odd"><td><p>field_map_2p4iso_e2</p></td>
-<td><p>acq-2p4_magnitude2</p></td>
 <td><p>fmap</p></td>
+<td><p>acq-2p4_magnitude2</p></td>
 <td><p>1</p></td>
 </tr>
 <tr class="row-even"><td><p>field_map_2p4iso_e2_ph</p></td>
-<td><p>acq-2p4_phasediff</p></td>
 <td><p>fmap</p></td>
+<td><p>acq-2p4_phasediff</p></td>
 <td><p>1</p></td>
 </tr>
 <tr class="row-odd"><td><p>field_map_2p5iso_e1</p></td>
-<td><p>acq-2p5_magnitude1</p></td>
 <td><p>fmap</p></td>
+<td><p>acq-2p5_magnitude1</p></td>
 <td><p>1</p></td>
 </tr>
 <tr class="row-even"><td><p>field_map_2p5iso_e2</p></td>
-<td><p>acq-2p5_magnitude2</p></td>
 <td><p>fmap</p></td>
+<td><p>acq-2p5_magnitude2</p></td>
 <td><p>1</p></td>
 </tr>
 <tr class="row-odd"><td><p>field_map_2p5iso_e2_ph</p></td>
-<td><p>acq-2p5_phasediff</p></td>
 <td><p>fmap</p></td>
+<td><p>acq-2p5_phasediff</p></td>
 <td><p>1</p></td>
 </tr>
 </tbody>
@@ -253,7 +250,7 @@ Please be aware that the data has been compressed twice using gunzip (suffix: �
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="installation_bidsconvertr.html" class="btn btn-neutral float-left" title="Install the BIDSconvertR" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="workflow_requirement.html" class="btn btn-neutral float-right" title="Requirement" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="workflow_requirement.html" class="btn btn-neutral float-right" title="Requirements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

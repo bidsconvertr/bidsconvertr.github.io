@@ -1,59 +1,52 @@
 # General
 
-This procedure should demonstrate how to use the BIDSconvertR. 
-We appreciate the [BIDScoin](https://github.com/Donders-Institute/bidscoin) team's permission to use their sample data.
-This tutorial only covers the basic steps. You can find a detailed description including visualizations in the "workflow" section.
-
+This procedure should demonstrate how to use the BIDSconvertR. We appreciate the [BIDScoin](https://github.com/Donders-Institute/bidscoin) team's permission to use their sample data. This tutorial only covers the basic steps. You can find a detailed description including visualizations in the "workflow" section.
 
 # The installation procedure
 
 Installing R and RStudio and downloading sample data:
 
-- To install the [BIDSconvertR](installation_bidsconvertr.md) on Windows or Linux follow the [instructions](installation.md).
-- Download the [BIDScoin](https://github.com/Donders-Institute/bidscoin) example data : [Download here](https://surfdrive.surf.nl/files/index.php/s/HTxdUbykBZm2cYM/download). 
-  Please be aware that the data has been compressed twice using gunzip (suffix: '.gz') and tar (suffix: '.tar'). You need to unpack both. Some programs do this in one step, others need to extract it twice. The data is fine, when you can easily click down the folder structure.
+-   To install the [BIDSconvertR](installation_bidsconvertr.md) on Windows or Linux follow the [instructions](installation.md).
+-   Download the [BIDScoin](https://github.com/Donders-Institute/bidscoin) example data : [Download here](https://surfdrive.surf.nl/files/index.php/s/HTxdUbykBZm2cYM/download). Please be aware that the data has been compressed twice using gunzip (suffix: '.gz') and tar (suffix: '.tar'). You need to unpack both. Some programs do this in one step, others need to extract it twice. The data is fine, when you can easily click down the folder structure.
 
 # The BIDSconvertR workflow
 
 This workflow covers each stage of the BIDSconvertR workflow:
 
-- Launch RStudio and use the R console from here on.
-- Execute `library("bidsconvertr", quietly = TRUE)`.
-- Use the `convert_to_BIDS()`command to launch the tool.
+-   Launch RStudio and use the R console from here on.
+-   Execute `library("bidsconvertr", quietly = TRUE)`.
+-   Use the `convert_to_BIDS()`command to launch the tool.
 
-## Creation of 'user\_settings.R' file.
+## Creation of 'user_settings.R' file.
 
-- Create your own 'user\_settings.R' file by following the popup messages.
-  - Step 1: Choose the input folder that contains the DICOM's (here 'bidscointutorial\raw').
-  - Step 2: Select the `../subject/session/..` order of folders.
-  - Step 3: Create and choose the output folder. All BIDSconvertR files (including the 'user_settings.R' file) are saved here.
-  - Step 4: Do not use the "subject-ID" or "pattern to remove" features. You have good subject-IDs!
-  
+-   Create your own 'user_settings.R' file by following the popup messages.
+    -   Step 1: Choose the input folder that contains the DICOM's (here 'bidscointutorial\raw').
+    -   Step 2: Select the `../subject/session/..` order of folders.
+    -   Step 3: Create and choose the output folder. All BIDSconvertR files (including the 'user_settings.R' file) are saved here.
+    -   Step 4: Do not use the "subject-ID" or "pattern to remove" features. You have good subject-IDs!
+
 ## GUI: sequence mapper
 
-- Use the sequence mapper to rename your files in accordance with BIDS, or download the `sequence_map.tsv` from [this link](https://raw.githubusercontent.com/wulms/bidsconvertr/master/extdata/sequence_map.tsv), right-click, save, and replace the file in your BIDS output folder.
+-   Use the sequence mapper to rename your files in accordance with BIDS, or download the `sequence_map.tsv` from [this link](https://raw.githubusercontent.com/wulms/bidsconvertr/master/extdata/sequence_map.tsv), right-click, save, and replace the file in your BIDS output folder.
 
 
-
-| sequence                            | BIDS_sequence                     | BIDS_type| relevant |
-|-------------------------------------|-----------------------------------|-------|---|
-| t1_mprage_sag_ipat2_1p0iso	        | T1w	                              | anat | 1 |
-| AAHead_Scout_32ch-head	            | smart	                            | anat | 0 |
-| cmrr_2p4iso_mb8_TR0700	            | task-reward_acq-mp8_echo-1_bold	  | func | 1 |
-| cmrr_2p4iso_mb8_TR0700_SBRef        |	task-reward_acq-mp8_echo-1_sbref  |	func | 1 |
-| cmrr_2p5iso_mb3me3_TR1500_e1        |	task-stop_acq-mp3m3_run-1_bold	  | func	| 1 |
-| cmrr_2p5iso_mb3me3_TR1500_e2        |	task-stop_acq-mp3m3_run-2_bold	  | func	| 1 |
-| cmrr_2p5iso_mb3me3_TR1500_e3        |	task-stop_acq-mp3m3_run-3_bold	  | func	| 1 |
-| cmrr_2p5iso_mb3me3_TR1500_SBRef_e1	| task-stop_acq-mp3m3_run-1_sbref	  | func	| 1 |
-| cmrr_2p5iso_mb3me3_TR1500_SBRef_e2	| task-stop_acq-mp3m3_run-2_sbref	  | func	| 1 |
-| cmrr_2p5iso_mb3me3_TR1500_SBRef_e3	| task-stop_acq-mp3m3_run-3_sbref	  | func	| 1 |
-| field_map_2p4iso_e1	                | acq-2p4_magnitude1	              | fmap 	| 1 |
-| field_map_2p4iso_e2	                | acq-2p4_magnitude2	              | fmap	| 1 |
-| field_map_2p4iso_e2_ph	            | acq-2p4_phasediff	                | fmap	| 1 |
-| field_map_2p5iso_e1	                | acq-2p5_magnitude1	              | fmap	| 1 |
-| field_map_2p5iso_e2	                | acq-2p5_magnitude2	              | fmap	| 1 |
-| field_map_2p5iso_e2_ph	            | acq-2p5_phasediff	                | fmap	| 1 |
-
-
+| sequence                           | BIDS_type | BIDS_sequence                    | relevant |
+|-------------------------|------------|------------------------|------------|
+| t1_mprage_sag_ipat2_1p0iso         | anat      | T1w                              | 1        |
+| AAHead_Scout_32ch-head             | anat      | smart                            | 0        |
+| cmrr_2p4iso_mb8_TR0700             | func      | task-reward_acq-mp8_echo-1_bold  | 1        |
+| cmrr_2p4iso_mb8_TR0700_SBRef       | func      | task-reward_acq-mp8_echo-1_sbref | 1        |
+| cmrr_2p5iso_mb3me3_TR1500_e1       | func      | task-stop_acq-mp3m3_run-1_bold   | 1        |
+| cmrr_2p5iso_mb3me3_TR1500_e2       | func      | task-stop_acq-mp3m3_run-2_bold   | 1        |
+| cmrr_2p5iso_mb3me3_TR1500_e3       | func      | task-stop_acq-mp3m3_run-3_bold   | 1        |
+| cmrr_2p5iso_mb3me3_TR1500_SBRef_e1 | func      | task-stop_acq-mp3m3_run-1_sbref  | 1        |
+| cmrr_2p5iso_mb3me3_TR1500_SBRef_e2 | func      | task-stop_acq-mp3m3_run-2_sbref  | 1        |
+| cmrr_2p5iso_mb3me3_TR1500_SBRef_e3 | func      | task-stop_acq-mp3m3_run-3_sbref  | 1        |
+| field_map_2p4iso_e1                | fmap      | acq-2p4_magnitude1               | 1        |
+| field_map_2p4iso_e2                | fmap      | acq-2p4_magnitude2               | 1        |
+| field_map_2p4iso_e2_ph             | fmap      | acq-2p4_phasediff                | 1        |
+| field_map_2p5iso_e1                | fmap      | acq-2p5_magnitude1               | 1        |
+| field_map_2p5iso_e2                | fmap      | acq-2p5_magnitude2               | 1        |
+| field_map_2p5iso_e2_ph             | fmap      | acq-2p5_phasediff                | 1        |
 
 Now the data is automatically saved into BIDS, the BIDS validator is started, and the `Shiny BIDS viewer` starts.
