@@ -5,7 +5,7 @@ You should be able to rename your sequences in accordance with the BIDS specific
 A double-click on a cell will open it for editing.
 The `Sequence Mapper` should now begin displaying the interface as follows:
 
-![Sequence mapper](../../../inst/figure/sequence_mapper.PNG)
+![Sequence mapper](../../../inst/figure/10_sequence_mapper_start.JPG)
 
 You have to edit each entry according to the BIDS specification.
 Some tips can be found on the left panel and hyperlinks to the BIDS specification.

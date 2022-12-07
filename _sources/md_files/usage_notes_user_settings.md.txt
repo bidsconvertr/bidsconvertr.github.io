@@ -10,23 +10,26 @@ Otherwise the questions will be asked inside the terminal (for the advanced user
 ```
 
 
-## Input directories (DICOM)
+## Choose input directories (DICOM)
+
+Select the root folder, which contains all session/subject or
+subject/session folders. 
+If you just have one session, keep your data in a folder named, say, ‘session-0’.
+
+![Image](../../../inst/figure/1_input_folder_message.JPG)
+
 
 Please select the root directory of all DICOM images (your input folder, as described above.)
 
-![Image](../../../inst/figure/bidsconvertr_select_input_folder.png)
+![Image](../../../inst/figure/1_input_folder_selection.JPG)
 
-
-The root folder, which contains all session/subject or
-subject/session folders, is the one you choose. 
-If you just have one session, keep your data in a folder named, say, ‘session-0’.
 
 Several folders are listed in the terminal. 
-These should include the DICOM information.
+These should include the DICOMs.
 
 ### Do these folders contain the DICOM images?
 
-![Image](../../../inst/figure/bidsconvertr_select_input_folder_check.png)
+![Image](../../../inst/figure/2_check_folders.JPG)
 
 | Option to select | What happens?                           |
 |------------------|-----------------------------------------|
@@ -34,11 +37,14 @@ These should include the DICOM information.
 | No               | You are able to select the folder again |
 
 
-## Folder hierarchy (subject/session or session/subject)
+## Select folder hierarchy (subject/session or session/subject)
+
+
+![Image](../../../inst/figure/3_order_message.JPG)
 
 Is your DICOM data structured as ‘session/subject’ or ‘subject/session’.
 
-![Image](../../../inst/figure/bidsconvertr_folder_order.png)
+![Image](../../../inst/figure/3_order_selection.JPG)
 
 
 Based on this selection, the tool extracts the subject- and session-ID’s.
@@ -68,14 +74,17 @@ Do they appear to be valid?
 | Yes              | Next step is started.          |
 | No               | Change the folder order again. |
 
-## Output directory (BIDS)
+## Choose output directory (BIDS)
+
+![Image](../../../inst/figure/5_output_dir.JPG)
+
 
 The output directory will contain:
 - temporary files and metadata of the dcm2niix conversion,
 - 'user_settings.R' file and
 - BIDS output.
 
-![Image](../../../inst/figure/bidsconvertr_select_output_folder.png)
+![Image](../../../inst/figure/5_output_dir_selection.JPG)
 
 
 You can choose any folder on your hard drive.

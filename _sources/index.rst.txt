@@ -94,6 +94,8 @@ So, if you can manually rename and restructure the folders according to BIDS, yo
 
    md_files/installation.md
    md_files/installation_bidsconvertr.md
+   md_files/workflow_requirement.md
+
 
 .. toctree::
    :maxdepth: 1
@@ -104,9 +106,8 @@ So, if you can manually rename and restructure the folders according to BIDS, yo
 
 .. toctree::
    :maxdepth: 1
-   :caption: Workflow (Setup 'user_settings.R'):
+   :caption: Workflow (Detailed):
 
-   md_files/workflow_requirement.md
    md_files/usage_notes.md
    md_files/usage_notes_user_settings.md
 

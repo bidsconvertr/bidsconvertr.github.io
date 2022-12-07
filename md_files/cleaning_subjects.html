@@ -50,35 +50,32 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Install R, dependencies and RStudio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation_bidsconvertr.html">Install the BIDSconvertR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_requirement.html">Requirements</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tutorial:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">General</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html#the-installation-procedure">The installation procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">The installation procedure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html#the-bidsconvertr-workflow">The BIDSconvertR workflow</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Workflow (Setup 'user_settings.R'):</span></p>
+<p class="caption" role="heading"><span class="caption-text">Workflow (Detailed):</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="workflow_requirement.html">Requirement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage_notes.html">Starting the workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage_notes_user_settings.html">Creation of ‘user settings’ file.</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Workflow (optional file cleaning):</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="usage_notes_advanced.html">Advanced features</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">subject-ID cleaning</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#regular-expression-subject-id">Regular expression: subject-ID</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#regular-expression-pattern-to-remove">Regular expression: pattern to remove</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">subject-ID cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#regular-expression-subject-id">Regular expression: subject-ID</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#regular-expression-pattern-to-remove">Regular expression: pattern to remove</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cleaning_sessions.html">session-ID cleaning</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Workflow (rest):</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="workflow_dcm2niix.html">dcm2niix conversion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workflow_sequencemapper.html">The sequence mapper GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_sequencemapper.html">GUI: The sequence mapper</a></li>
 <li class="toctree-l1"><a class="reference internal" href="workflow_validation.html">BIDS validation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workflow_qc.html">BIDS viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_qc.html">GUI: BIDS viewer</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Additional information:</span></p>
 <ul>
@@ -116,8 +113,9 @@
 <h1>subject-ID cleaning<a class="headerlink" href="#subject-id-cleaning" title="Permalink to this heading"></a></h1>
 <p>The input folder name serves as the subject-ID.
 In the absence of a regular expression, the subject-ID is unaltered.</p>
+</section>
 <section id="regular-expression-subject-id">
-<h2>Regular expression: subject-ID<a class="headerlink" href="#regular-expression-subject-id" title="Permalink to this heading"></a></h2>
+<h1>Regular expression: subject-ID<a class="headerlink" href="#regular-expression-subject-id" title="Permalink to this heading"></a></h1>
 <p><img alt="Image" src="../_images/bidsconvertr_regex_subjid.png" /></p>
 <p>The subject-ID is extracted from the input string using this regular expression.
 If all of your files had a well established naming convention, you could use this.</p>
@@ -170,7 +168,7 @@ If all of your files had a well established naming convention, you could use thi
 <p>Examples of subject-ID regular expressions</p>
 </section>
 <section id="regular-expression-pattern-to-remove">
-<h2>Regular expression: pattern to remove<a class="headerlink" href="#regular-expression-pattern-to-remove" title="Permalink to this heading"></a></h2>
+<h1>Regular expression: pattern to remove<a class="headerlink" href="#regular-expression-pattern-to-remove" title="Permalink to this heading"></a></h1>
 <p><img alt="Image" src="../_images/bidsconvertr_regex_remove.png" /></p>
 <p>The <code class="docutils literal notranslate"><span class="pre">pattern_to_remove</span></code> regular expression simply removes the regular expression(s) from the subject-ID.</p>
 <table class="colwidths-auto docutils align-default">
@@ -221,7 +219,6 @@ If all of your files had a well established naming convention, you could use thi
 </table>
 <p>Examples of ‘patterns to remove’ regular expressions</p>
 <p><img alt="Image" src="../_images/bidsconvertr_regex_valid.png" /></p>
-</section>
 </section>
 
 

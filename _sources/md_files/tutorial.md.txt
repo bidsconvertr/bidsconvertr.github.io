@@ -1,7 +1,3 @@
-# General
-
-This procedure should demonstrate how to use the BIDSconvertR. We appreciate the [BIDScoin](https://github.com/Donders-Institute/bidscoin) team's permission to use their sample data. This tutorial only covers the basic steps. You can find a detailed description including visualizations in the "workflow" section.
-
 # The installation procedure
 
 Installing R and RStudio and downloading sample data:
@@ -9,7 +5,10 @@ Installing R and RStudio and downloading sample data:
 -   To install the [BIDSconvertR](installation_bidsconvertr.md) on Windows or Linux follow the [instructions](installation.md).
 -   Download the [BIDScoin](https://github.com/Donders-Institute/bidscoin) example data : [Download here](https://surfdrive.surf.nl/files/index.php/s/HTxdUbykBZm2cYM/download). Please be aware that the data has been compressed twice using gunzip (suffix: '.gz') and tar (suffix: '.tar'). You need to unpack both. Some programs do this in one step, others need to extract it twice. The data is fine, when you can easily click down the folder structure.
 
+
 # The BIDSconvertR workflow
+
+This procedure should demonstrate how to use the BIDSconvertR. We appreciate the [BIDScoin](https://github.com/Donders-Institute/bidscoin) team's permission to use their sample data. This tutorial only covers the basic steps. You can find a detailed description including visualizations in the "workflow" section.
 
 This workflow covers each stage of the BIDSconvertR workflow:
 
@@ -20,15 +19,36 @@ This workflow covers each stage of the BIDSconvertR workflow:
 ## Creation of 'user_settings.R' file.
 
 -   Create your own 'user_settings.R' file by following the popup messages.
+
+    ![Sequence mapper](../../../inst/figure/0_user_settings.JPG)
+
     -   Step 1: Choose the input folder that contains the DICOM's (here 'bidscointutorial\raw').
+    
+    ![Sequence mapper](../../../inst/figure/1_input_folder_selection.JPG)
+
+    
     -   Step 2: Select the `../subject/session/..` order of folders.
+    
+    ![Sequence mapper](../../../inst/figure/3_order_selection.JPG)
+
     -   Step 3: Create and choose the output folder. All BIDSconvertR files (including the 'user_settings.R' file) are saved here.
-    -   Step 4: Do not use the "subject-ID" or "pattern to remove" features. You have good subject-IDs!
+    
+    ![Sequence mapper](../../../inst/figure/5_output_dir_selection.JPG)
+
+    -   Step 4: Do not use the "subject-ID" or "pattern to remove" features. You have compliant subject-IDs!
+
+    ![Sequence mapper](../../../inst/figure/6_1_data_cleaning_message.JPG)
+
 
 ## GUI: sequence mapper
 
--   Use the sequence mapper to rename your files in accordance with BIDS, or download the `sequence_map.tsv` from [this link](https://raw.githubusercontent.com/wulms/bidsconvertr/master/extdata/sequence_map.tsv), right-click, save, and replace the file in your BIDS output folder.
+-   Use the sequence mapper to rename your files in accordance with BIDS, click "save" and close the window. The workflow should automatically launch the next steps.
 
+
+![Image](../../../inst/figure/10_sequence_mapper_end.JPG)
+
+
+Here you find the entries as text for copy & pasting. Alternatively, download the `sequence_map.tsv` from [this link](https://raw.githubusercontent.com/wulms/bidsconvertr/master/extdata/sequence_map.tsv), right-click, save, and replace the file in your BIDS output folder.
 
 | sequence                           | BIDS_type | BIDS_sequence                    | relevant |
 |-------------------------|------------|------------------------|------------|

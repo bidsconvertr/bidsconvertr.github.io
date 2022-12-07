@@ -1,4 +1,4 @@
-# session-ID cleaning
+### session-ID cleaning
 
 ![Image](../../../inst/figure/bidsconvertr_renaming_sessions.png)
 

@@ -1,4 +1,5 @@
-# Starting the workflow
+
+## Starting the workflow
 
 ``` r
 # Load the library. 
@@ -9,9 +10,9 @@ library(bidsconvertr, quietly = TRUE)
 convert_to_BIDS()
 ```
 
-## The 'user settings.R' file - selection or creation
+### The 'user settings.R' file - selection or creation
 
-A 'user settings.R' file is required when using the 'convert to BIDS()' function.
+A 'user settings.R' file is required when using the 'convert to BIDS()' function. You are able to create a new file or select an already created one from a further conversion process.
 
 ```{note} 
 The 'user settings.R' file stores the settings and variables you've chosen (folders, filename convention, dcm2niix string, regular expressions).
@@ -19,9 +20,9 @@ It is saved to the output directory and can be used again for future conversion 
 A user dialogue will walk you through the creation and selection process.
 ```
 
-## Do you have a `user settings` file?
+### Do you have a `user settings` file?
 
-![User Settings Selection](../../../inst/figure/bidsconvertr_settings_file.png)
+![User Settings Selection](../../../inst/figure/0_user_settings.JPG)
 
 | Option | What happens?                                                                                                       |
 |--------|---------------------------------------------------------------------------------------------------------------------|
@@ -29,7 +30,10 @@ A user dialogue will walk you through the creation and selection process.
 | No     | Starts a selection process and creates your user settings file in the output folder.                                      |
 
 
+If you clicked "Yes", you have to select an already existing "user_settings.R" file.
 
+
+![User Settings Selection](../../../inst/figure/0_1_user_settings_selection.JPG)
 
 
 

@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Creation of ‘user settings’ file." href="usage_notes_user_settings.html" />
-    <link rel="prev" title="Requirement" href="workflow_requirement.html" />
+    <link rel="prev" title="The installation procedure" href="tutorial.html" />
     <link href="../_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -50,16 +50,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Install R, dependencies and RStudio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation_bidsconvertr.html">Install the BIDSconvertR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_requirement.html">Requirements</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tutorial:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">General</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html#the-installation-procedure">The installation procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">The installation procedure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html#the-bidsconvertr-workflow">The BIDSconvertR workflow</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Workflow (Setup 'user_settings.R'):</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="workflow_requirement.html">Requirement</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Starting the workflow</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#the-user-settings-r-file-selection-or-creation">The ‘user settings.R’ file - selection or creation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#do-you-have-a-user-settings-file">Do you have a <code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">settings</span></code> file?</a></li>
@@ -76,9 +75,9 @@
 <p class="caption" role="heading"><span class="caption-text">Workflow (rest):</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="workflow_dcm2niix.html">dcm2niix conversion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workflow_sequencemapper.html">The sequence mapper GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_sequencemapper.html">GUI: The sequence mapper</a></li>
 <li class="toctree-l1"><a class="reference internal" href="workflow_validation.html">BIDS validation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workflow_qc.html">BIDS viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_qc.html">GUI: BIDS viewer</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Additional information:</span></p>
 <ul>
@@ -124,7 +123,7 @@
 </div>
 <section id="the-user-settings-r-file-selection-or-creation">
 <h2>The ‘user settings.R’ file - selection or creation<a class="headerlink" href="#the-user-settings-r-file-selection-or-creation" title="Permalink to this heading"></a></h2>
-<p>A ‘user settings.R’ file is required when using the ‘convert to BIDS()’ function.</p>
+<p>A ‘user settings.R’ file is required when using the ‘convert to BIDS()’ function. You are able to create a new file or select an already created one from a further conversion process.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The ‘user settings.R’ file stores the settings and variables you’ve chosen (folders, filename convention, dcm2niix string, regular expressions).
@@ -134,7 +133,7 @@ A user dialogue will walk you through the creation and selection process.</p>
 </section>
 <section id="do-you-have-a-user-settings-file">
 <h2>Do you have a <code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">settings</span></code> file?<a class="headerlink" href="#do-you-have-a-user-settings-file" title="Permalink to this heading"></a></h2>
-<p><img alt="User Settings Selection" src="../_images/bidsconvertr_settings_file.png" /></p>
+<p><img alt="User Settings Selection" src="../_images/0_user_settings.JPG" /></p>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Option</p></th>
@@ -150,6 +149,8 @@ A user dialogue will walk you through the creation and selection process.</p>
 </tr>
 </tbody>
 </table>
+<p>If you clicked “Yes”, you have to select an already existing “user_settings.R” file.</p>
+<p><img alt="User Settings Selection" src="../_images/0_1_user_settings_selection.JPG" /></p>
 </section>
 </section>
 
@@ -157,7 +158,7 @@ A user dialogue will walk you through the creation and selection process.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="workflow_requirement.html" class="btn btn-neutral float-left" title="Requirement" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial.html" class="btn btn-neutral float-left" title="The installation procedure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="usage_notes_user_settings.html" class="btn btn-neutral float-right" title="Creation of ‘user settings’ file." accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

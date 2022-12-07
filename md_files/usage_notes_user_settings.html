@@ -50,27 +50,26 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Install R, dependencies and RStudio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation_bidsconvertr.html">Install the BIDSconvertR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_requirement.html">Requirements</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tutorial:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">General</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html#the-installation-procedure">The installation procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">The installation procedure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html#the-bidsconvertr-workflow">The BIDSconvertR workflow</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Workflow (Setup 'user_settings.R'):</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="workflow_requirement.html">Requirement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage_notes.html">Starting the workflow</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Creation of ‘user settings’ file.</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#input-directories-dicom">Input directories (DICOM)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#choose-input-directories-dicom">Choose input directories (DICOM)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#do-these-folders-contain-the-dicom-images">Do these folders contain the DICOM images?</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#folder-hierarchy-subject-session-or-session-subject">Folder hierarchy (subject/session or session/subject)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#select-folder-hierarchy-subject-session-or-session-subject">Select folder hierarchy (subject/session or session/subject)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#were-subject-ids-and-session-ids-extracted-correctly">Were subject-ID’s and session-ID’s extracted correctly?</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#output-directory-bids">Output directory (BIDS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#choose-output-directory-bids">Choose output directory (BIDS)</a></li>
 </ul>
 </li>
 </ul>
@@ -83,9 +82,9 @@
 <p class="caption" role="heading"><span class="caption-text">Workflow (rest):</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="workflow_dcm2niix.html">dcm2niix conversion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workflow_sequencemapper.html">The sequence mapper GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_sequencemapper.html">GUI: The sequence mapper</a></li>
 <li class="toctree-l1"><a class="reference internal" href="workflow_validation.html">BIDS validation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workflow_qc.html">BIDS viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_qc.html">GUI: BIDS viewer</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Additional information:</span></p>
 <ul>
@@ -129,18 +128,19 @@ The questions from each popup window are described below in their order.</p>
 <p>You need RStudio for popup support (user-friendly solution).
 Otherwise the questions will be asked inside the terminal (for the advanced user).</p>
 </div>
-<section id="input-directories-dicom">
-<h2>Input directories (DICOM)<a class="headerlink" href="#input-directories-dicom" title="Permalink to this heading"></a></h2>
-<p>Please select the root directory of all DICOM images (your input folder, as described above.)</p>
-<p><img alt="Image" src="../_images/bidsconvertr_select_input_folder.png" /></p>
-<p>The root folder, which contains all session/subject or
-subject/session folders, is the one you choose.
+<section id="choose-input-directories-dicom">
+<h2>Choose input directories (DICOM)<a class="headerlink" href="#choose-input-directories-dicom" title="Permalink to this heading"></a></h2>
+<p>Select the root folder, which contains all session/subject or
+subject/session folders.
 If you just have one session, keep your data in a folder named, say, ‘session-0’.</p>
+<p><img alt="Image" src="../_images/1_input_folder_message.JPG" /></p>
+<p>Please select the root directory of all DICOM images (your input folder, as described above.)</p>
+<p><img alt="Image" src="../_images/1_input_folder_selection.JPG" /></p>
 <p>Several folders are listed in the terminal.
-These should include the DICOM information.</p>
+These should include the DICOMs.</p>
 <section id="do-these-folders-contain-the-dicom-images">
 <h3>Do these folders contain the DICOM images?<a class="headerlink" href="#do-these-folders-contain-the-dicom-images" title="Permalink to this heading"></a></h3>
-<p><img alt="Image" src="../_images/bidsconvertr_select_input_folder_check.png" /></p>
+<p><img alt="Image" src="../_images/2_check_folders.JPG" /></p>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Option to select</p></th>
@@ -158,10 +158,11 @@ These should include the DICOM information.</p>
 </table>
 </section>
 </section>
-<section id="folder-hierarchy-subject-session-or-session-subject">
-<h2>Folder hierarchy (subject/session or session/subject)<a class="headerlink" href="#folder-hierarchy-subject-session-or-session-subject" title="Permalink to this heading"></a></h2>
+<section id="select-folder-hierarchy-subject-session-or-session-subject">
+<h2>Select folder hierarchy (subject/session or session/subject)<a class="headerlink" href="#select-folder-hierarchy-subject-session-or-session-subject" title="Permalink to this heading"></a></h2>
+<p><img alt="Image" src="../_images/3_order_message.JPG" /></p>
 <p>Is your DICOM data structured as ‘session/subject’ or ‘subject/session’.</p>
-<p><img alt="Image" src="../_images/bidsconvertr_folder_order.png" /></p>
+<p><img alt="Image" src="../_images/3_order_selection.JPG" /></p>
 <p>Based on this selection, the tool extracts the subject- and session-ID’s.
 The folders are displayed on the console.</p>
 <p>Please note: Any subject- or session-ID is possible! Without
@@ -204,15 +205,16 @@ Do they appear to be valid?</p>
 </table>
 </section>
 </section>
-<section id="output-directory-bids">
-<h2>Output directory (BIDS)<a class="headerlink" href="#output-directory-bids" title="Permalink to this heading"></a></h2>
+<section id="choose-output-directory-bids">
+<h2>Choose output directory (BIDS)<a class="headerlink" href="#choose-output-directory-bids" title="Permalink to this heading"></a></h2>
+<p><img alt="Image" src="../_images/5_output_dir.JPG" /></p>
 <p>The output directory will contain:</p>
 <ul class="simple">
 <li><p>temporary files and metadata of the dcm2niix conversion,</p></li>
 <li><p>‘user_settings.R’ file and</p></li>
 <li><p>BIDS output.</p></li>
 </ul>
-<p><img alt="Image" src="../_images/bidsconvertr_select_output_folder.png" /></p>
+<p><img alt="Image" src="../_images/5_output_dir_selection.JPG" /></p>
 <p>You can choose any folder on your hard drive.
 As a result, raw data can be stored somewhere other than where processed data is.</p>
 </section>

@@ -1,9 +1,9 @@
-# subject-ID cleaning
+### subject-ID cleaning
 
 The input folder name serves as the subject-ID.
 In the absence of a regular expression, the subject-ID is unaltered.
 
-## Regular expression: subject-ID 
+### Regular expression: subject-ID 
 
 ![Image](../../../inst/figure/bidsconvertr_regex_subjid.png)
 
@@ -23,7 +23,7 @@ If all of your files had a well established naming convention, you could use thi
 
 Examples of subject-ID regular expressions
 
-## Regular expression: pattern to remove
+### Regular expression: pattern to remove
 
 ![Image](../../../inst/figure/bidsconvertr_regex_remove.png)
 

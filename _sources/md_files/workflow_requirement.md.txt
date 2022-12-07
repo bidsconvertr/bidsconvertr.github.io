@@ -6,8 +6,8 @@
 - RStudio (recent version)
 - R packages installed:
   - 'devtools'
-- 'shiny'
-- 'bidsconvertr'
+  - 'shiny'
+  - 'bidsconvertr'
 
 ## Input data
 

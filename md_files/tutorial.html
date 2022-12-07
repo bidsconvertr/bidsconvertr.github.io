@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>General &mdash; BIDSconvertR 0.0.1 documentation</title>
+  <title>The installation procedure &mdash; BIDSconvertR 0.0.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -53,8 +53,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tutorial:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">General</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#the-installation-procedure">The installation procedure</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The installation procedure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#the-bidsconvertr-workflow">The BIDSconvertR workflow</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#creation-of-user-settings-r-file">Creation of ‘user_settings.R’ file.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gui-sequence-mapper">GUI: sequence mapper</a></li>
@@ -102,7 +101,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>General</li>
+      <li>The installation procedure</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/md_files/tutorial.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -112,11 +111,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="general">
-<h1>General<a class="headerlink" href="#general" title="Permalink to this heading"></a></h1>
-<p>This procedure should demonstrate how to use the BIDSconvertR. We appreciate the <a class="reference external" href="https://github.com/Donders-Institute/bidscoin">BIDScoin</a> team’s permission to use their sample data. This tutorial only covers the basic steps. You can find a detailed description including visualizations in the “workflow” section.</p>
-</section>
-<section id="the-installation-procedure">
+  <section id="the-installation-procedure">
 <h1>The installation procedure<a class="headerlink" href="#the-installation-procedure" title="Permalink to this heading"></a></h1>
 <p>Installing R and RStudio and downloading sample data:</p>
 <ul class="simple">
@@ -126,6 +121,7 @@
 </section>
 <section id="the-bidsconvertr-workflow">
 <h1>The BIDSconvertR workflow<a class="headerlink" href="#the-bidsconvertr-workflow" title="Permalink to this heading"></a></h1>
+<p>This procedure should demonstrate how to use the BIDSconvertR. We appreciate the <a class="reference external" href="https://github.com/Donders-Institute/bidscoin">BIDScoin</a> team’s permission to use their sample data. This tutorial only covers the basic steps. You can find a detailed description including visualizations in the “workflow” section.</p>
 <p>This workflow covers each stage of the BIDSconvertR workflow:</p>
 <ul class="simple">
 <li><p>Launch RStudio and use the R console from here on.</p></li>
@@ -134,22 +130,35 @@
 </ul>
 <section id="creation-of-user-settings-r-file">
 <h2>Creation of ‘user_settings.R’ file.<a class="headerlink" href="#creation-of-user-settings-r-file" title="Permalink to this heading"></a></h2>
-<ul class="simple">
-<li><p>Create your own ‘user_settings.R’ file by following the popup messages.</p>
 <ul>
+<li><p>Create your own ‘user_settings.R’ file by following the popup messages.</p>
+<p><img alt="Sequence mapper" src="../_images/0_user_settings.JPG" /></p>
+<ul class="simple">
 <li><p>Step 1: Choose the input folder that contains the DICOM’s (here ‘bidscointutorial\raw’).</p></li>
-<li><p>Step 2: Select the <code class="docutils literal notranslate"><span class="pre">../subject/session/..</span></code> order of folders.</p></li>
-<li><p>Step 3: Create and choose the output folder. All BIDSconvertR files (including the ‘user_settings.R’ file) are saved here.</p></li>
-<li><p>Step 4: Do not use the “subject-ID” or “pattern to remove” features. You have good subject-IDs!</p></li>
 </ul>
+<p><img alt="Sequence mapper" src="../_images/1_input_folder_selection.JPG" /></p>
+<ul class="simple">
+<li><p>Step 2: Select the <code class="docutils literal notranslate"><span class="pre">../subject/session/..</span></code> order of folders.</p></li>
+</ul>
+<p><img alt="Sequence mapper" src="../_images/3_order_selection.JPG" /></p>
+<ul class="simple">
+<li><p>Step 3: Create and choose the output folder. All BIDSconvertR files (including the ‘user_settings.R’ file) are saved here.</p></li>
+</ul>
+<p><img alt="Sequence mapper" src="../_images/5_output_dir_selection.JPG" /></p>
+<ul class="simple">
+<li><p>Step 4: Do not use the “subject-ID” or “pattern to remove” features. You have compliant subject-IDs!</p></li>
+</ul>
+<p><img alt="Sequence mapper" src="../_images/6_1_data_cleaning_message.JPG" /></p>
 </li>
 </ul>
 </section>
 <section id="gui-sequence-mapper">
 <h2>GUI: sequence mapper<a class="headerlink" href="#gui-sequence-mapper" title="Permalink to this heading"></a></h2>
 <ul class="simple">
-<li><p>Use the sequence mapper to rename your files in accordance with BIDS, or download the <code class="docutils literal notranslate"><span class="pre">sequence_map.tsv</span></code> from <a class="reference external" href="https://raw.githubusercontent.com/wulms/bidsconvertr/master/extdata/sequence_map.tsv">this link</a>, right-click, save, and replace the file in your BIDS output folder.</p></li>
+<li><p>Use the sequence mapper to rename your files in accordance with BIDS, click “save” and close the window. The workflow should automatically launch the next steps.</p></li>
 </ul>
+<p><img alt="Image" src="../_images/10_sequence_mapper_end.JPG" /></p>
+<p>Here you find the entries as text for copy &amp; pasting. Alternatively, download the <code class="docutils literal notranslate"><span class="pre">sequence_map.tsv</span></code> from <a class="reference external" href="https://raw.githubusercontent.com/wulms/bidsconvertr/master/extdata/sequence_map.tsv">this link</a>, right-click, save, and replace the file in your BIDS output folder.</p>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>sequence</p></th>
