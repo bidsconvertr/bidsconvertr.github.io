@@ -119,5 +119,5 @@ install.packages("devtools")
 Using the command below, you can now install the most recent development version of `BIDSconvertR`.
 
 ``` r
-devtools::install_github(repo = "wulms/bidsconvertr")
+devtools::install_github(repo = "bidsconvertr/bidsconvertr")
 ```

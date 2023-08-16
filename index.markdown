@@ -22,7 +22,7 @@ layout: home
 
 [![DOI](https://zenodo.org/badge/448850893.svg)](https://zenodo.org/badge/latestdoi/448850893)
 [![BIDS](https://img.shields.io/badge/BIDS-v1.7.0-blue)](https://bids-specification.readthedocs.io/en/v1.7.0/)
-[![Github](https://img.shields.io/github/v/release/wulms/bidsconvertr.svg)](https://github.com/wulms/bidsconvertr)
+[![Github](https://img.shields.io/github/v/release/bidsconvertr/bidsconvertr.svg)](https://github.com/bidsconvertr/bidsconvertr)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 |![BIDSconvertR]({{ site.baseurl }}/assets/BIDSconvertR.png){: width="150" } | The hexagonal sticker was made using the [iconspackage](https://github.com/mitchelloharawild/icons) and based on the MRI svg graphics provided by Flaticon and mavadee [FlaticonLink](https://www.flaticon.com/free-icons/mri). |
@@ -44,7 +44,7 @@ layout: home
 
 ## Aim
 
-[BIDSconvertR](https://github.com/wulms/bidsconvertr) aims to provide a workflow that can:
+[BIDSconvertR](https://github.com/bidsconvertr/bidsconvertr) aims to provide a workflow that can:
 
 - do the task inside of the R environment
 - convert DICOM data to NIfTI (with the awesome [dcm2niix (v1.0.20230411)](https://github.com/rordenlab/dcm2niix) or [install a custom version]({{ site.baseurl }}/usage_notes/#installation-of-other-versions))
@@ -84,7 +84,7 @@ Only the metadata contained within the BIDS folder is free of potentially identi
 ----
 # How to cite: 
 
-Wulms, Niklas. 2022. *Wulms/Bidsconvertr*. Zenodo.
+Wulms, Niklas. 2022. *BIDSconvertR*. Zenodo.
 <https://doi.org/10.5281/ZENODO.5878407>.
 
 ----
