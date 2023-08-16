@@ -93,7 +93,7 @@ The video takes a few seconds to load.
 
 ## Default values for tutorial data
 
-Here you find the entries as text for copy & pasting. Alternatively, download the `sequence_map.tsv` from [this link](https://raw.githubusercontent.com/wulms/bidsconvertr/master/extdata/sequence_map.tsv){: .btn .btn-green }, right-click, save, and replace the file in your BIDS output folder.
+Here you find the entries as text for copy & pasting. Alternatively, download the `sequence_map.tsv` from [this link](https://raw.githubusercontent.com/bidsconvertr/bidsconvertr/master/extdata/sequence_map.tsv){: .btn .btn-green }, right-click, save, and replace the file in your BIDS output folder.
 
 | sequence                           | BIDS_type | BIDS_sequence                    | relevant |
 |-------------------------|------------|------------------------|------------|

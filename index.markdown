@@ -20,9 +20,9 @@ layout: home
 
 <!-- badges: start -->
 
-[![DOI](https://zenodo.org/badge/448850893.svg)](https://zenodo.org/badge/latestdoi/448850893)
-[![BIDS](https://img.shields.io/badge/BIDS-v1.7.0-blue)](https://bids-specification.readthedocs.io/en/v1.7.0/)
-[![Github](https://img.shields.io/github/v/release/bidsconvertr/bidsconvertr.svg)](https://github.com/bidsconvertr/bidsconvertr)
+[![DOI](https://zenodo.org/badge/448850893.svg)](https://doi.org/10.5281/zenodo.5878407)
+[![BIDS](https://img.shields.io/badge/BIDS-v1.8.0-blue)](https://bids-specification.readthedocs.io/en/v1.8.0/)
+[![Github](https://img.shields.io/github/v/release/wulms/bidsconvertr.svg)](https://github.com/bidsconvertr/bidsconvertr)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 |![BIDSconvertR]({{ site.baseurl }}/assets/BIDSconvertR.png){: width="150" } | The hexagonal sticker was made using the [iconspackage](https://github.com/mitchelloharawild/icons) and based on the MRI svg graphics provided by Flaticon and mavadee [FlaticonLink](https://www.flaticon.com/free-icons/mri). |
