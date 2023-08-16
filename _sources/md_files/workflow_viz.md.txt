@@ -1,3 +1,0 @@
-## Workflow visualization
-
-![Workflow](../../../inst/figure/BIDSconvertR_workflow.png)
