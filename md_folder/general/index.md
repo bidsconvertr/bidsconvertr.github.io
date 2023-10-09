@@ -84,6 +84,10 @@ Only the metadata contained within the BIDS folder is free of potentially identi
 ----
 # How to cite: 
 
+Wulms N, Eppe S, Dehghan‑Nayyeri M, Streeter A, Bonberg N, Berger K, Sundermann B, Minnerup H. (2023). *The
+R package for DICOM to brain imaging data structure conversion* Nature Scientific Data. 2023 Oct 04. doi: 10.1038/s41597‑023‑
+02583‑4 <https://doi.org/10.1038/s41597-023-02583-4>
+
 Wulms, Niklas. 2022. *BIDSconvertR*. Zenodo.
 <https://doi.org/10.5281/zenodo.5878407>.
 
