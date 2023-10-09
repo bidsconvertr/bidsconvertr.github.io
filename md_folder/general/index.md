@@ -93,7 +93,5 @@ Wulms, Niklas. 2022. *BIDSconvertR*. Zenodo.
 ----
 ## Milestones / To-Do's
 
-- publish the BIDSconvertR
-- create Docker container
 - move image viewer into separate package
 - adapt code to CRAN requirements
